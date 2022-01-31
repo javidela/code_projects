@@ -1,11 +1,7 @@
-# Raw Package
+# Import packages
 import numpy as np
 import pandas as pd
-
-#Data Source
 import yfinance as yf
-
-#Data viz
 import plotly.graph_objs as go
 
 #Interval required 1 minute
@@ -23,7 +19,7 @@ fig.add_trace(go.Candlestick(x=data.index,
 
 # Add titles
 fig.update_layout(
-    title='Uber live share price evolution',
+    title='Apple live share price evolution',
     yaxis_title='Stock Price (USD per Shares)')
 
 # X-Axes
@@ -35,6 +31,7 @@ fig.update_xaxes(
             dict(count=45, label="45m", step="minute", stepmode="backward"),
             dict(count=1, label="HTD", step="hour", stepmode="todate"),
             dict(count=3, label="3h", step="hour", stepmode="backward"),
+            dict(count=1, label='month', step='month', stepmode='backward'),
             dict(step="all")
         ])
     )
@@ -42,3 +39,6 @@ fig.update_xaxes(
 
 #Show
 fig.show()
+
+# Inspired by 
+# https://towardsdatascience.com/python-how-to-get-live-market-data-less-than-0-1-second-lag-c85ee280ed93
