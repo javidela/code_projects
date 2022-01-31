@@ -6,7 +6,6 @@ import plotly.graph_objs as go
 
 #Interval required 1 minute
 data = yf.download(tickers='AAPL', period='1d', interval='1m')
-print('I am in Development')
 
 #declare figure
 fig = go.Figure()
